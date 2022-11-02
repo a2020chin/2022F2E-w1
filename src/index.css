@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Cubic';
+  font-style: normal;
+  src: url(./fonts/Cubic_11_1.013_R.woff2) format('woff2');
+}
+
+@layer base {
+  html, body {
+    @apply font-Cubic
+  }
+  h1 {
+    font-size: 80px;
+  }
+  h2 {
+    font-size: 64px;
+  }
+  h3 {
+    font-size: 56px;
+  }
+  h4 {
+    font-size: 48px;
+  }
+  h5 {
+    font-size: 32px;
+  }
+  p {
+    @apply font-Cubic md:text-[20px] md:leading-normal lg:text-[24px]
+  }
+}

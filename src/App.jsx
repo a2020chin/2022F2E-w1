@@ -1,4 +1,4 @@
-import { useLayoutEffect , useRef } from 'react'
+import { useEffect , useRef } from 'react'
 import { gsap } from "gsap";
 import { TextPlugin } from "gsap/TextPlugin";
 
@@ -7,11 +7,11 @@ import { TextPlugin } from "gsap/TextPlugin";
 function App() {
 
 
-  const tl = useRef();
+  const tl = useRef(null);
   const loading = useRef(null);
   gsap.registerPlugin(TextPlugin);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     
     let ctx = gsap.context(() => {
       tl.current = gsap.timeline({repeat: -1})

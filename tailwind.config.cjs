@@ -9,6 +9,12 @@ module.exports = {
       'Cubic' : ['Cubic', 'sans-serif']
     },
     extend: {
+      keyframes: {
+        flicker: {
+          '0%, 100%': { opacity: 1 },
+          '50%': { opacity: 0 }
+        }
+      },
       colors: {
         primaryGray: {
           100: '#F4F4F4',

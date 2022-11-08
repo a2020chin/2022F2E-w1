@@ -2,6 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components{
+  @responsive {
+    .text-shadow {
+      text-shadow: 10px 10px 0px #00E733;
+    }
+    .text-shadow-sm {
+      text-shadow: 4px 4px 0px #00E733;
+    }
+  }
+}
+
+
 @font-face {
   font-family: 'Cubic';
   font-style: normal;

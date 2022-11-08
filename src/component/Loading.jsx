@@ -2,6 +2,8 @@ import { useEffect, useRef } from 'react'
 import { gsap, Expo } from 'gsap'
 import { TextPlugin } from "gsap/TextPlugin";
 
+import btnImg from '../../public/buttom.png';
+
 
 gsap.registerPlugin(TextPlugin);
 
@@ -97,23 +99,32 @@ const Loading = () => {
               </div>
               <ul className='flex'>
                 <li>
-                  <a href="">註冊報名</a>
+                  <a className='inline-block bg-[url("../../buttom.png")] bg-cover w-40 h-[72px] duration-300 hover:drop-shadow-[4px_4px_20px_#FF5B5B] focus:bg-[url("../../signupFocus.png")]' href=""></a>
                 </li>
                 <li>
-                  <a href="">登入</a>
+                <a className='inline-block bg-[url("../../buttom1.png")] bg-cover w-40 h-[72px] duration-300 hover:drop-shadow-[4px_4px_20px_#22C06F] focus:bg-[url("../../loginFocus.png")]' href=""></a>
                 </li>
               </ul>
             </nav>
             <div className=' w-screen h-screen flex flex-col justify-center items-center'>
-              <div className='mb-28'>
-                <h1 className=' font-ArcadeClassic text-[160px]'>THE F2E<sup className=' text-[64px] align-[75px]'>4th</sup></h1>
-                <h3>互動式網頁設計</h3>
+              <div className='mb-28 text-[#844AE1]'>
+                <h1 className='font-ArcadeClassic text-[160px] text-shadow'>THE F2E<sup className=' text-[64px] align-[75px]'>4th</sup></h1>
+                <h3 className='text-center text-shadow-sm'>互動式網頁設計</h3>
               </div>
 
               <ul>
-                <li className='py-3'><a className=' text-white hover:' href="">六角學院</a></li>
-                <li className='py-3'><a className=' text-white hover:' href="">UI DESIGN</a></li>
-                <li className='py-3'><a className=' text-white hover:' href="">FRONTEND</a></li>
+                <li className='py-3 flex items-center group'>
+                  <div className='invisible text-textWhite text-[24px] leading-none group-hover:visible group-hover:animate-[flicker_1.5s_steps(1)_infinite] mr-6'>▶</div>
+                  <a className='inline-block text-[24px] text-textWhite hover:' href="">六角學院</a>
+                </li>
+                <li className='py-3 flex items-center group'>
+                  <div className='invisible text-textWhite text-[24px] leading-none group-hover:visible group-hover:animate-[flicker_1.5s_steps(1)_infinite] mr-6'>▶</div>
+                  <a className='inline-block text-[24px] text-textWhite hover:' href="">UI DESIGN</a>
+                </li>
+                <li className='py-3 flex items-center group'>
+                  <div className='invisible text-textWhite text-[24px] leading-none group-hover:visible group-hover:animate-[flicker_1.5s_steps(1)_infinite] mr-6'>▶</div>
+                  <a className='inline-block text-[24px] text-textWhite hover:' href="">FRONTEND</a>
+                </li>
               </ul>
             </div>
           </div>

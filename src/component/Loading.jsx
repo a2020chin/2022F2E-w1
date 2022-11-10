@@ -12,15 +12,20 @@ const Loading = () => {
   const tl = useRef(null);
   const loading = useRef(null);
 
+
   const [MuneHover, setMuneHover] = useState(1)
 
   
-
-
+  // 動畫事件
+  // 按鍵事件
   useEffect(() => {
 
     let ctx = gsap.context(()=>{
-      tl.current = gsap.timeline({})
+      tl.current = gsap.timeline({
+        onComplete: () => { 
+          document.addEventListener("keyup", PopupKeyUp, false)
+        }
+      })
         .to('.am_loadword span',{
           duration: 0.4,
           y: -25,
@@ -49,17 +54,34 @@ const Loading = () => {
           height: '100%',
         },'>0.8')
         .to('.am_loadtitle',{
-          width: '100%'
-          
+          width: '100%',
+          display: 'block'
         },'>0.2')
-
-
-      
+        
     },loading )
 
-
-    return () => ctx.revert();
+    
+    return () => {
+      ctx.revert()
+      document.removeEventListener("keyup", PopupKeyUp, false)
+    };
   },[])
+
+  
+
+  const PopupKeyUp = (e) => {
+    if (e.code === "ArrowUp") {
+      setMuneHover((value)=> value == 1 ? 3 : value-1)
+    }
+    if (e.code === "ArrowDown") {
+      setMuneHover((value)=> value == 3 ? 1 : value+1)
+    }
+    if (e.code === "Enter") {
+      MuneHover == 1 ? window.open('https://www.hexschool.com/') : MuneHover == 2 ? window.open('https://2022.thef2e.com/login') : window.open('https://2022.thef2e.com/login')
+    }
+  }
+
+
 
   return (
     <>
@@ -78,7 +100,7 @@ const Loading = () => {
             <span>.</span>
           </h3>
           <div className='am_loadbar absolute bg-primaryGray-200 h-[2px] w-0 left-0 z-[2]'></div>
-          <div className='am_loadtitle absolute bg-primaryGray-600 h-full w-0 right-0 z-[3]'>
+          <div className='hidden am_loadtitle absolute bg-primaryGray-600 h-full w-0 right-0 z-[3]'>
             <nav className='fixed w-full flex justify-between items-center text-white p-6'>
               <div className='flex'>
                 <h3 className=' font-ArcadeClassic border-r-4 pr-4 mr-4'>
@@ -118,7 +140,6 @@ const Loading = () => {
                   <a 
                   className='inline-block text-[24px] text-textWhite'
                   onMouseEnter={()=>setMuneHover(1)}
-                  
                   href="">六角學院</a>
                 </li>
                 <li className='py-3 flex items-center group'>
@@ -126,7 +147,6 @@ const Loading = () => {
                   <a 
                   className='inline-block text-[24px] text-textWhite'
                   onMouseEnter={()=>setMuneHover(2)}
-                  
                   href="">UI DESIGN</a>
                 </li>
                 <li className='py-3 flex items-center group'>
@@ -134,7 +154,6 @@ const Loading = () => {
                   <a 
                   className='inline-block text-[24px] text-textWhite'
                   onMouseEnter={()=>setMuneHover(3)}
-                  
                   href="">FRONTEND</a>
                 </li>
               </ul>

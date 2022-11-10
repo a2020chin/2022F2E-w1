@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { gsap, Expo } from 'gsap'
 import { TextPlugin } from "gsap/TextPlugin";
 
@@ -12,13 +12,12 @@ const Loading = () => {
   const tl = useRef(null);
   const loading = useRef(null);
 
+  const [MuneHover, setMuneHover] = useState(1)
 
+  
 
 
   useEffect(() => {
-
-
-    
 
     let ctx = gsap.context(()=>{
       tl.current = gsap.timeline({})
@@ -114,16 +113,29 @@ const Loading = () => {
 
               <ul>
                 <li className='py-3 flex items-center group'>
-                  <div className='invisible text-textWhite text-[24px] leading-none group-hover:visible group-hover:animate-[flicker_1.5s_steps(1)_infinite] mr-6'>▶</div>
-                  <a className='inline-block text-[24px] text-textWhite hover:' href="">六角學院</a>
+                  <div className={`text-textWhite text-[24px] leading-none mr-6 ${MuneHover == 1 ? 'visible animate-[flicker_1.5s_steps(1)_infinite]' : 'invisible'}`}
+                  >▶</div>
+                  <a 
+                  className='inline-block text-[24px] text-textWhite'
+                  onMouseEnter={()=>setMuneHover(1)}
+                  
+                  href="">六角學院</a>
                 </li>
                 <li className='py-3 flex items-center group'>
-                  <div className='invisible text-textWhite text-[24px] leading-none group-hover:visible group-hover:animate-[flicker_1.5s_steps(1)_infinite] mr-6'>▶</div>
-                  <a className='inline-block text-[24px] text-textWhite hover:' href="">UI DESIGN</a>
+                  <div className={`text-textWhite text-[24px] leading-none mr-6 ${MuneHover == 2 ? 'visible animate-[flicker_1.5s_steps(1)_infinite]' : 'invisible'}`}>▶</div>
+                  <a 
+                  className='inline-block text-[24px] text-textWhite'
+                  onMouseEnter={()=>setMuneHover(2)}
+                  
+                  href="">UI DESIGN</a>
                 </li>
                 <li className='py-3 flex items-center group'>
-                  <div className='invisible text-textWhite text-[24px] leading-none group-hover:visible group-hover:animate-[flicker_1.5s_steps(1)_infinite] mr-6'>▶</div>
-                  <a className='inline-block text-[24px] text-textWhite hover:' href="">FRONTEND</a>
+                  <div className={`text-textWhite text-[24px] leading-none mr-6 ${MuneHover == 3 ? 'visible animate-[flicker_1.5s_steps(1)_infinite]' : 'invisible'}`}>▶</div>
+                  <a 
+                  className='inline-block text-[24px] text-textWhite'
+                  onMouseEnter={()=>setMuneHover(3)}
+                  
+                  href="">FRONTEND</a>
                 </li>
               </ul>
             </div>

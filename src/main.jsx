@@ -2,15 +2,15 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 // import App from './App'
 import Loading from './component/Loading'
-import TitleAnime from './component/TitleAnime'
+
+// import  PurposeSection  from './component//PurposeSection'
 import './index.css'
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     {/* <App /> */}
-    <Loading>
-      <TitleAnime/>
-    </Loading>
+    <Loading />
+    {/* <PurposeSection/> */}
   </React.StrictMode>
 )

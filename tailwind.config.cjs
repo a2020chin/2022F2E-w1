@@ -26,6 +26,15 @@ module.exports = {
         },
         textWhite: '#E3E3E3',
       },
+      backgroundImage: {
+        signBtnImg : "url('./images/signup.png')",
+        signFocusBtnImg : "url('./images/signupFocus.png')",
+        signDisabledBtnImg : "url('./images/signDisabledBtnImg.png')",
+        loginBtnImg : "url('./images/login.png')",
+        loginFocusBtnImg : "url('./images/loginFocus.png')",
+        goldImg : "url('./images/gold.png')",
+        boardImg : "url('./images/board.png')"
+      },
     },
   },
   plugins: [],

@@ -10,6 +10,9 @@
     .text-shadow-sm {
       text-shadow: 4px 4px 0px #00E733;
     }
+    .bg-gradient-toNextSection{
+      background-image: radial-gradient(circle , transparent 0%, transparent 99.99%, #000000 99.99%, #000000 100%);
+    }
   }
 }
 
@@ -22,10 +25,10 @@
 
 @layer base {
   html, body {
-    @apply font-Cubic
+    @apply font-Cubic box-border
   }
   section {
-    @apply w-screen h-screen
+    @apply w-full h-screen
   }
   h1 {
     font-size: 80px;

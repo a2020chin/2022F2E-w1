@@ -2,12 +2,15 @@ import { useEffect, useRef, useState} from 'react'
 import { gsap, Expo } from 'gsap'
 import { TextPlugin } from "gsap/TextPlugin";
 
-import btnImg from '../../public/buttom.png';
+import TitleAnime from './TitleAnime'
+
+
+
 
 
 gsap.registerPlugin(TextPlugin);
 
-const Loading = ({children}) => {
+const Loading = () => {
 
   const [amComplete, setAmComplete] = useState(false)
   
@@ -74,7 +77,7 @@ const Loading = ({children}) => {
 
   return (
     <>
-      {amComplete ? children : loadAnime}
+      {amComplete ? <TitleAnime/> : loadAnime}
     </>
   )
 }

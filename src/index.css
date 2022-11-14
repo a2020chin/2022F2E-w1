@@ -2,27 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer components{
-  @responsive {
-    .text-shadow {
-      text-shadow: 10px 10px 0px #00E733;
-    }
-    .text-shadow-sm {
-      text-shadow: 4px 4px 0px #00E733;
-    }
-    .bg-gradient-toNextSection{
-      background-image: radial-gradient(circle , transparent 0%, transparent 99.99%, #000000 99.99%, #000000 100%);
-    }
-  }
-}
-
-
-@font-face {
-  font-family: 'Cubic';
-  font-style: normal;
-  src: url(./fonts/Cubic_11_1.013_R.woff2) format('woff2');
-}
-
 @layer base {
   html, body {
     @apply font-Cubic box-border
@@ -48,4 +27,27 @@
   p {
     @apply md:text-[20px] md:leading-normal lg:text-[24px]
   }
+}
+
+@layer components{
+  
+    .text-shadow {
+      text-shadow: 10px 10px 0px #00E733;
+    }
+    .text-shadow-sm {
+      text-shadow: 4px 4px 0px #00E733;
+    }
+    .bg-gradient-toNextSection{
+      background-image: radial-gradient(circle , transparent 0%, transparent 99.99%, #000000 99.99%, #000000 100%);
+    }
+    .bg-goldImg {background:url('https://i.imgur.com/o4FvKYP.png')}
+    
+
+}
+
+
+@font-face {
+  font-family: 'Cubic';
+  font-style: normal;
+  src: url('../public/fonts/Cubic_11_1.013_R.woff2') format('woff2');
 }

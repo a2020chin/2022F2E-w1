@@ -245,7 +245,7 @@ const PurposeSection = () => {
           </ul>
         </nav>
         <div className='am_NextRule relative w-full h-[calc(75vh_-_132px)] flex flex-col justify-between px-14'>
-            <div className={`am_gold absolute h-1/2 bottom-0 w-[200%] bg-goldImg bg-repeat-x z-[1] ${amComplete ? 'hidden' : 'block'}`}></div>
+            <div className={`am_gold absolute h-1/2 bottom-0 w-[200%] bg-goldImg bg bg-repeat-x z-[1] ${amComplete ? 'hidden' : 'block'}`}></div>
 
             <div>
               <ul className='am_card flex gap-6'>
@@ -267,7 +267,7 @@ const PurposeSection = () => {
 
 
             <div className='am_topic w-full h-full'> 
-              <div className='am_board3 absolute bg-boardImg bg-[length:350px_240px] w-[350px] h-[240px] py-8 px-4 flex flex-col justify-between top-0 right-[120px]'>
+              <div className='am_board3 absolute bg-boardImg bg-[url("https://i.imgur.com/xlEO9za.png")] bg-[length:350px_240px] w-[350px] h-[240px] py-8 px-4 flex flex-col justify-between top-0 right-[120px]'>
                 <div className='flex justify-between'>
                   <p className='text-2xl'>WEEK3</p>
                   <img className=' w-8 h-8' src="./images/week3icon.png" alt="" />
@@ -279,7 +279,7 @@ const PurposeSection = () => {
                 </div>
                 <p className='text-2xl text-end'>鈦坦科技</p>
               </div>
-              <div className='am_board2 absolute bg-boardImg bg-[length:350px_240px] w-[350px] h-[240px] py-8 px-4 flex flex-col justify-between top-6 right-44'>
+              <div className='am_board2 absolute bg-boardImg bg-[url("https://i.imgur.com/xlEO9za.png")] bg-[length:350px_240px] w-[350px] h-[240px] py-8 px-4 flex flex-col justify-between top-6 right-44'>
                 <div className='flex justify-between'>
                   <p className='text-2xl'>WEEK2</p>
                   <img className=' w-8 h-8' src="./images/week2icon.png" alt="" />
@@ -291,7 +291,7 @@ const PurposeSection = () => {
                 </div>
                 <p className='text-2xl text-end'>凱鈿行動科技</p>
               </div>
-              <div className='am_board1 absolute bg-boardImg bg-[length:350px_240px] w-[350px] h-[240px] py-8 px-4 flex flex-col justify-between top-12 right-[232px]'>
+              <div className='am_board1 absolute bg-boardImg bg-[url("https://i.imgur.com/xlEO9za.png")] bg-[length:350px_240px] w-[350px] h-[240px] py-8 px-4 flex flex-col justify-between top-12 right-[232px]'>
                 <div className='flex justify-between'>
                   <p className='text-2xl'>WEEK1</p>
                   <img className=' w-8 h-8' src="./images/week1icon.png" alt="" />

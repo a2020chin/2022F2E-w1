@@ -142,10 +142,10 @@ function TitleAnime() {
       </div>
       <ul className='flex'>
         <li>
-          <button className='inline-block bg-signBtnImg bg-cover w-40 h-[72px] duration-300 hover:drop-shadow-[4px_4px_20px_#FF5B5B] focus:bg-signFocusBtnImg disabled:bg-signDisabledBtnImg' disabled></button>
+          <button className='inline-block bg-[url("https://i.imgur.com/UGb8d9S.png")] bg-cover w-40 h-[72px] duration-300 hover:drop-shadow-[4px_4px_20px_#FF5B5B] focus:bg-[url("https://i.imgur.com/ZueI99Y.png")] disabled:bg-[url("https://i.imgur.com/Bfg5Zxe.png")]' disabled></button>
         </li>
         <li>
-          <a className='inline-block bg-loginBtnImg bg-cover w-40 h-[72px] duration-300 hover:drop-shadow-[4px_4px_20px_#22C06F] focus:bg-loginFocusBtnImg'
+          <a className='inline-block bg-[url("https://i.imgur.com/KWznTqO.png")] bg-cover w-40 h-[72px] duration-300 hover:drop-shadow-[4px_4px_20px_#22C06F] focus:bg-[url("https://i.imgur.com/YuX8tzj.png")]'
             href="https://2022.thef2e.com/login"></a>
         </li>
       </ul>
@@ -162,7 +162,8 @@ function TitleAnime() {
           >▶</div>
           <a
             className='inline-block text-[24px] text-textWhite'
-            onMouseEnter={() => {
+            onMouseEnter={(e) => {
+              e.preventDefault()
               setMuneHover(1)
               toNextSection()
             }}
@@ -172,7 +173,8 @@ function TitleAnime() {
           <div className={`text-textWhite text-[24px] leading-none mr-6 ${muneHover == 2 ? 'visible animate-[flicker_1.5s_steps(1)_infinite]' : 'invisible'}`}>▶</div>
           <a
             className='inline-block text-[24px] text-textWhite'
-            onMouseEnter={() => {
+            onMouseEnter={(e) => {
+              e.preventDefault()
               setMuneHover(2)
               toNextSection()
             }}
@@ -182,7 +184,8 @@ function TitleAnime() {
           <div className={`text-textWhite text-[24px] leading-none mr-6 ${muneHover == 3 ? 'visible animate-[flicker_1.5s_steps(1)_infinite]' : 'invisible'}`}>▶</div>
           <a
             className='inline-block text-[24px] text-textWhite'
-            onMouseEnter={() => {
+            onMouseEnter={(e) => {
+              e.preventDefault()
               setMuneHover(3)
               toNextSection()
             }}

@@ -104,15 +104,10 @@ const PurposeSection = () => {
         pinSpacer: true
       },
     })
-    t2.current.to('.am_zombie1,.am_zombie2,.am_zombie3',{
-        xPercent: '-450',
+    t2.current.to('.am_cardAndZombie',{
+        xPercent: '-100',
         ease: "none",
       })
-      .to('.am_card',{
-        ease: "none",
-        xPercent: '-300',
-        display: 'none'
-      },'<')
       .to('.am_menuSelect div',{
         opacity: 0,
         display: 'none'
@@ -120,7 +115,7 @@ const PurposeSection = () => {
       .fromTo('.am_rule',{
         ease: "none",
         display: 'block',
-        xPercent: '200'
+        xPercent: '100'
       },{
         ease: "none",
         xPercent: '0'
@@ -236,18 +231,18 @@ const PurposeSection = () => {
           </div>
           <ul className='flex'>
             <li>
-              <button className='inline-block bg-signBtnImg bg-cover w-40 h-[72px] duration-300 hover:drop-shadow-[4px_4px_20px_#FF5B5B] focus:bg-signFocusBtnImg disabled:bg-signDisabledBtnImg' disabled></button>
+              <button className='inline-block bg-[url("https://i.imgur.com/UGb8d9S.png")] bg-cover w-40 h-[72px] duration-300 hover:drop-shadow-[4px_4px_20px_#FF5B5B] focus:bg-[url("https://i.imgur.com/ZueI99Y.png")] disabled:bg-[url("https://i.imgur.com/Bfg5Zxe.png")]' disabled></button>
             </li>
             <li>
-            <a className='inline-block bg-loginBtnImg bg-cover w-40 h-[72px] duration-300 hover:drop-shadow-[4px_4px_20px_#22C06F] focus:bg-loginFocusBtnImg' 
+            <a className='inline-block bg-[url("https://i.imgur.com/KWznTqO.png")] bg-cover w-40 h-[72px] duration-300 hover:drop-shadow-[4px_4px_20px_#22C06F] focus:bg-[url("https://i.imgur.com/YuX8tzj.png")]' 
             href="https://2022.thef2e.com/login"></a>
             </li>
           </ul>
         </nav>
         <div className='am_NextRule relative w-full h-[calc(75vh_-_132px)] flex flex-col justify-between px-14'>
-            <div className={`am_gold absolute h-1/2 bottom-0 w-[200%] bg-goldImg bg bg-repeat-x z-[1] ${amComplete ? 'hidden' : 'block'}`}></div>
+            <div className={`am_gold absolute h-1/2 bottom-0 w-[200%] bg-goldImg bg-repeat-x z-[1] ${amComplete ? 'hidden' : 'block'}`}></div>
 
-            <div>
+            <div className='am_cardAndZombie w-full'>
               <ul className='am_card flex gap-6'>
                 <li className=' shadow-[8px_8px_0px_rgba(0,0,0,0.25)] bg-[#FBFBFB] border-4 border-primaryGray-600 rounded-lg text-primaryGray-600 text-base sm:text-base md:text-xl lg:text-2xl p-4 -translate-x-8 opacity-0'>羨慕別人的酷酷網頁動畫</li>
                 <li className=' shadow-[8px_8px_0px_rgba(0,0,0,0.25)] bg-[#FBFBFB] border-4 border-primaryGray-600 rounded-lg text-primaryGray-600 text-base sm:text-base md:text-xl lg:text-2xl p-4 -translate-x-8 opacity-0'>滿足不了同事的許願</li>
@@ -258,7 +253,7 @@ const PurposeSection = () => {
               <img className='am_zombie3 absolute top-[84px] right-96 w-80 h-80' src="./images/zombie.png" alt="" />
             </div>
 
-            <div className='am_rule absolute mx-20 mt-10 hidden'>
+            <div className='am_rule w-full px-20 mt-10 hidden'>
               <h4 >活動說明：</h4>
               <p className='text-[32px]'>本活動需由UI設計師和前端工程師合作，採接力完成作品的形式，一週先由UI設計師投稿設計作品，下一週則由前端工程師認領作品，並將其完整產出。 今年三大主題與各路廠商強強聯手，挑戰者們準備好攜手合作打造最強互動式網頁設計了嗎？</p>
             </div>

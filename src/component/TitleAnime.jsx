@@ -162,8 +162,7 @@ function TitleAnime() {
           >▶</div>
           <a
             className='inline-block text-[24px] text-textWhite'
-            onMouseEnter={(e) => {
-              e.preventDefault()
+            onMouseEnter={() => {
               setMuneHover(1)
               toNextSection()
             }}
@@ -173,9 +172,9 @@ function TitleAnime() {
           <div className={`text-textWhite text-[24px] leading-none mr-6 ${muneHover == 2 ? 'visible animate-[flicker_1.5s_steps(1)_infinite]' : 'invisible'}`}>▶</div>
           <a
             className='inline-block text-[24px] text-textWhite'
-            onMouseEnter={(e) => {
+            onMouseEnter={() => {setMuneHover(2)}}
+            onClick={(e) =>{
               e.preventDefault()
-              setMuneHover(2)
               toNextSection()
             }}
             href="https://2022.thef2e.com/login">UI DESIGN</a>
@@ -184,9 +183,9 @@ function TitleAnime() {
           <div className={`text-textWhite text-[24px] leading-none mr-6 ${muneHover == 3 ? 'visible animate-[flicker_1.5s_steps(1)_infinite]' : 'invisible'}`}>▶</div>
           <a
             className='inline-block text-[24px] text-textWhite'
-            onMouseEnter={(e) => {
+            onMouseEnter={() => {setMuneHover(3)}}
+            onClick={(e) =>{
               e.preventDefault()
-              setMuneHover(3)
               toNextSection()
             }}
             href="https://2022.thef2e.com/login">FRONTEND</a>

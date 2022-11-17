@@ -17,6 +17,9 @@ export default defineConfig({
         display: 'auto',
         preload: true,
       }
-    })
+    }),
   ],
+  server: {
+    host: '0.0.0.0'
+  }
 })

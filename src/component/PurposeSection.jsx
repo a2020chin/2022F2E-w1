@@ -2,6 +2,7 @@ import { useEffect, useRef, useState} from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { TextPlugin } from "gsap/TextPlugin";
+import Timeline from './Timeline'
 
 gsap.registerPlugin(TextPlugin);
 gsap.registerPlugin(ScrollTrigger);
@@ -399,21 +400,7 @@ const PurposeSection = () => {
 
 
 
-        <div className='timeline absolute bottom-0 w-full h-[calc(100vh_-_240px)]'>
-          <div className='flex justify-center'>
-            <ul className='flex border-4 border-primaryGray-600'>
-              <li>比賽流程</li>
-              <li>開放報名</li>
-              <li>組別開賽</li>
-              <li>登陸作品</li>
-              <li>公布得獎</li>
-            </ul>
-          </div>
-          <div className='w-full h-[calc(100%_-_56px)] border-8 border-primaryGray-600 rounded-lg'>
-            <div className='h-1/4'></div>
-            <div className='h-3/4'></div>
-          </div>
-        </div>
+        <Timeline/>
 
 
 

@@ -134,7 +134,8 @@ const PurposeSection = () => {
         opacity: 0
       })
       .to('.am_Ash,.am_Ash2',{
-        bottom: -250
+        bottom: -250,
+        top: '',
       },'<')
       .to('.am_card2',{
         yPercent: 350,
@@ -184,16 +185,28 @@ const PurposeSection = () => {
         'text-align': 'center'
       },'<')
       .to('.am_board1',{
-        yPercent: 200,
+        xPercent: -200,
       },'>1')
       .to('.am_board2',{
-        yPercent: 200,
+        xPercent: -200,
       },'>1')
       .to('.am_board3',{
-        yPercent: 200,
+        xPercent: -200,
       },'>1')
-
+      .to('.am_Ash,.am_Ash2',{
+        bottom: '',
+        top: 0,
+        width: 160,
+        height: 160,
+      })
+      .to('.am_Ash',{
+        left: 24
+      },'<')
+      .to('.am_Ash2',{
+        left: 184
+      },'<')
       
+
   }
 
 
@@ -282,7 +295,7 @@ const PurposeSection = () => {
                 <h3 className='am_boardTitle break-normal overflow-y-hidden text-[28px]'>Scrum新手村</h3>
                 <div className='flex justify-between'>
                   <h4 className='am_boardLevel text-[28px]'>JS draggable</h4>
-                  <a href='https://2022.thef2e.com/news/week3' className='am_boardNews flex text-xl self-end cursor-pointer hover:text-[#844AE1]'>
+                  <a href='https://2022.thef2e.com/news/week3' target='_blank' className='am_boardNews flex text-xl self-end cursor-pointer hover:text-[#844AE1]'>
                     <img className='inline-block w-6 h-6 mr-2 opacity-0' src="./images/blackLoading.gif" alt="" />
                     關卡資訊
                   </a>
@@ -297,7 +310,7 @@ const PurposeSection = () => {
                 <h3 className='am_boardTitle break-normal overflow-y-hidden text-[28px]'>今晚，我想來點點簽</h3>
                 <div className='flex justify-between'>
                   <h4 className='am_boardLevel text-[28px]'>canavas</h4>
-                  <a href='https://2022.thef2e.com/news/week2' className='am_boardNews flex text-xl self-end cursor-pointer hover:text-[#844AE1]'>
+                  <a href='https://2022.thef2e.com/news/week2' target='_blank' className='am_boardNews flex text-xl self-end cursor-pointer hover:text-[#844AE1]'>
                     <img className='inline-block w-6 h-6 mr-2 opacity-0' src="./images/blackLoading.gif" alt="" />
                     關卡資訊
                   </a>
@@ -312,33 +325,26 @@ const PurposeSection = () => {
                 <h3 className='am_boardTitle break-normal overflow-y-hidden text-[28px]'>THE F2E活動網站設計</h3>
                 <div className='flex justify-between'>
                   <h4 className='am_boardLevel text-[28px]'>視差滾動</h4>
-                  <a href='https://2022.thef2e.com/news/week1' className='am_boardNews flex text-xl self-end cursor-pointer hover:text-[#844AE1]'>
+                  <a href='https://2022.thef2e.com/news/week1' target='_blank' className='am_boardNews flex text-xl self-end cursor-pointer hover:text-[#844AE1]'>
                     <img className='inline-block w-6 h-6 mr-2 opacity-0' src="./images/blackLoading.gif" alt="" />
                     關卡資訊
                   </a>
                 </div>
                 <p className='am_boardCompany text-2xl text-end'>板塊設計</p>
-              </div>
-              
+              </div>          
             </div>
 
 
 
 
-            <img className='am_Ash absolute w-80 h-80 -bottom-4 left-full z-[3]' src="./images/Ash.png" alt="" />
-            <img className='am_Ash2 absolute w-80 h-80 -bottom-4 left-full z-[3]' src="./images/Ash.png" alt="" />
+            <img className='am_Ash absolute w-80 h-80 top-auto -bottom-4 left-full z-[3]' src="./images/Ash.png" alt="" />
+            <img className='am_Ash2 absolute w-80 h-80 top-auto -bottom-4 left-full z-[3]' src="./images/Ash.png" alt="" />
 
             <ul className='am_card2 flex justify-end gap-6 mb-8'>
               <li className=' shadow-[8px_8px_0px_rgba(0,0,0,0.25)] bg-[#FBFBFB] border-4 border-primaryGray-600 rounded-lg text-primaryGray-600 text-base sm:text-base md:text-xl lg:text-2xl p-4 translate-x-8 opacity-0'>UI DESIGNER</li>
               <li className=' shadow-[8px_8px_0px_rgba(0,0,0,0.25)] bg-[#FBFBFB] border-4 border-primaryGray-600 rounded-lg text-primaryGray-600 text-base sm:text-base md:text-xl lg:text-2xl p-4 translate-x-8 opacity-0'>FRONT-END DEVELOPER </li>
             </ul>
 
-
-
-
-
-
-          
 
 
         </div>
@@ -388,6 +394,29 @@ const PurposeSection = () => {
         </div>
        
         
+
+
+
+
+
+        <div className='timeline absolute bottom-0 w-full h-[calc(100vh_-_240px)]'>
+          <div className='flex justify-center'>
+            <ul className='flex border-4 border-primaryGray-600'>
+              <li>比賽流程</li>
+              <li>開放報名</li>
+              <li>組別開賽</li>
+              <li>登陸作品</li>
+              <li>公布得獎</li>
+            </ul>
+          </div>
+          <div className='w-full h-[calc(100%_-_56px)] border-8 border-primaryGray-600 rounded-lg'>
+            <div className='h-1/4'></div>
+            <div className='h-3/4'></div>
+          </div>
+        </div>
+
+
+
       </section>
     </>
   )

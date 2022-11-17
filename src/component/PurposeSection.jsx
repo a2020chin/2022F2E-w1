@@ -20,6 +20,7 @@ const PurposeSection = () => {
     tl.current = gsap.timeline({
       onComplete: () => {
         document.addEventListener("keyup", menuKey, false)
+        amScroll()
         setAmComplete(true)
       }
     })
@@ -37,12 +38,12 @@ const PurposeSection = () => {
         bottom: -400
       },'<1.5')
       .to('.am_Ash',{
-        duration: 3,
+        duration: 2.5,
         left: 40,
         ease: "back.out(1.4)"
       },'<-0.1')
       .to('.am_Ash2',{
-        duration: 3,
+        duration: 2.5,
         left: 320,
         ease: "back.out(1.4)"
       },'<0.3')
@@ -58,22 +59,14 @@ const PurposeSection = () => {
         top: 148,
         right: 0
       },'<')
-      .to('.am_card li',{
-        duration: 1.5,
+      .to('.am_card li, .am_card2 li',{
+        duration: 1,
         opacity: 1,
         transform: 'translate(0)',
         stagger: {
           each: 0.15
         }
       })
-      .to('.am_card2 li',{
-        duration: 1.5,
-        opacity: 1,
-        transform: 'translate(0)',
-        stagger: {
-          each: 0.15
-        }
-      },'<')
       .to('.am_challenge',{
         text: '挑戰者',
         duration: 0.6,
@@ -85,7 +78,6 @@ const PurposeSection = () => {
 
     return ()=>{
       tl.current.kill()
-      amScroll()
     }
       
   },[])
@@ -98,7 +90,7 @@ const PurposeSection = () => {
         trigger: ".am_ruleSection",
         // markers: true,
         start: 'top 0',
-        end: 'bottom -200%',
+        end: 'bottom -500%',
         pin: true, 
         scrub: 1,
         pinSpacer: true
@@ -106,6 +98,7 @@ const PurposeSection = () => {
     })
     t2.current.to('.am_cardAndZombie',{
         xPercent: '-100',
+        display: 'none',
         ease: "none",
       })
       .to('.am_menuSelect div',{
@@ -145,11 +138,13 @@ const PurposeSection = () => {
       },'<')
       .to('.am_card2',{
         yPercent: 350,
-      })
+      },'<')
       .to(topic,{
         ease: "none",
         width: 1080,
         height: 640,
+        gap: '12px',
+        'justify-content': 'normal',
         'background-size': '1080px 640px' ,
       })
       .to('.am_board3',{
@@ -164,24 +159,41 @@ const PurposeSection = () => {
         right: 80,
         padding: '92px 80px'
       },'<')
-      .to('.am_board1 img',{
+      .to('.am_boardIcon',{
         width: 120,
         height: 120
       },'<')
-      .to('.am_board2 img',{
-        width: 120,
-        height: 120
+      .to('.am_boardWeek',{
+        'font-size' : 56,
+        'align-self': 'end'
       },'<')
-      .to('.am_board3 img',{
-        width: 120,
-        height: 120
+      .to('.am_boardLevel, .am_boardTitle',{
+        'font-size' : 80
       },'<')
-      .to('.am_board1 p',{
-        'font-size' : 56
+      .to('.am_boardNews',{
+        'font-size' : 32,
+        padding: 8,
+        background: 'white',
+        'border': '2px solid #222222', 
       },'<')
-      .to('.am_board1 h3',{
-        'font-size' : 56
+      .to('.am_boardNews img',{
+        opacity: 1
       },'<')
+      .to('.am_boardCompany',{
+        'font-size' : 56,
+        'text-align': 'center'
+      },'<')
+      .to('.am_board1',{
+        yPercent: 200,
+      },'>1')
+      .to('.am_board2',{
+        yPercent: 200,
+      },'>1')
+      .to('.am_board3',{
+        yPercent: 200,
+      },'>1')
+
+      
   }
 
 
@@ -244,16 +256,16 @@ const PurposeSection = () => {
 
             <div className='am_cardAndZombie w-full'>
               <ul className='am_card flex gap-6'>
-                <li className=' shadow-[8px_8px_0px_rgba(0,0,0,0.25)] bg-[#FBFBFB] border-4 border-primaryGray-600 rounded-lg text-primaryGray-600 text-base sm:text-base md:text-xl lg:text-2xl p-4 -translate-x-8 opacity-0'>羨慕別人的酷酷網頁動畫</li>
-                <li className=' shadow-[8px_8px_0px_rgba(0,0,0,0.25)] bg-[#FBFBFB] border-4 border-primaryGray-600 rounded-lg text-primaryGray-600 text-base sm:text-base md:text-xl lg:text-2xl p-4 -translate-x-8 opacity-0'>滿足不了同事的許願</li>
-                <li className=' shadow-[8px_8px_0px_rgba(0,0,0,0.25)] bg-[#FBFBFB] border-4 border-primaryGray-600 rounded-lg text-primaryGray-600 text-base sm:text-base md:text-xl lg:text-2xl p-4 -translate-x-8 opacity-0'>動畫技能樹太雜無從下手</li>
+                <li className='shadow-[8px_8px_0px_rgba(0,0,0,0.25)] bg-[#FBFBFB] border-4 border-primaryGray-600 rounded-lg text-primaryGray-600 text-base sm:text-base md:text-xl lg:text-2xl p-4 -translate-x-8 opacity-0'>羨慕別人的酷酷網頁動畫</li>
+                <li className='shadow-[8px_8px_0px_rgba(0,0,0,0.25)] bg-[#FBFBFB] border-4 border-primaryGray-600 rounded-lg text-primaryGray-600 text-base sm:text-base md:text-xl lg:text-2xl p-4 -translate-x-8 opacity-0'>滿足不了同事的許願</li>
+                <li className='shadow-[8px_8px_0px_rgba(0,0,0,0.25)] bg-[#FBFBFB] border-4 border-primaryGray-600 rounded-lg text-primaryGray-600 text-base sm:text-base md:text-xl lg:text-2xl p-4 -translate-x-8 opacity-0'>動畫技能樹太雜無從下手</li>
               </ul>
               <img className='am_zombie1 absolute top-[84px] right-96 w-80 h-80 ' src="./images/zombie.png" alt="" />
               <img className='am_zombie2 absolute top-[84px] right-96  w-80 h-80 ' src="./images/zombie.png" alt="" />
               <img className='am_zombie3 absolute top-[84px] right-96 w-80 h-80' src="./images/zombie.png" alt="" />
             </div>
 
-            <div className='am_rule w-full px-20 mt-10 hidden'>
+            <div className='am_rule w-full px-20 mt-5 hidden'>
               <h4 >活動說明：</h4>
               <p className='text-[32px]'>本活動需由UI設計師和前端工程師合作，採接力完成作品的形式，一週先由UI設計師投稿設計作品，下一週則由前端工程師認領作品，並將其完整產出。 今年三大主題與各路廠商強強聯手，挑戰者們準備好攜手合作打造最強互動式網頁設計了嗎？</p>
             </div>
@@ -261,42 +273,51 @@ const PurposeSection = () => {
 
 
 
-            <div className='am_topic w-full h-full'> 
+            <div className='am_topic hidden w-full h-full'> 
               <div className='am_board3 absolute bg-boardImg bg-[url("https://i.imgur.com/xlEO9za.png")] bg-[length:350px_240px] w-[350px] h-[240px] py-8 px-4 flex flex-col justify-between top-0 right-[120px]'>
                 <div className='flex justify-between'>
-                  <p className='text-2xl'>WEEK3</p>
-                  <img className=' w-8 h-8' src="./images/week3icon.png" alt="" />
+                  <p className='am_boardWeek text-2xl'>WEEK3</p>
+                  <img className='am_boardIcon w-8 h-8' src="./images/week3icon.png" alt="" />
                 </div>
-                <h3 className='text-[28px]'>Scrum新手村</h3>
+                <h3 className='am_boardTitle break-normal overflow-y-hidden text-[28px]'>Scrum新手村</h3>
                 <div className='flex justify-between'>
-                  <h4 className='text-[28px]'>JS draggable</h4>
-                  <p className='text-xl self-end'>關卡資訊</p>
+                  <h4 className='am_boardLevel text-[28px]'>JS draggable</h4>
+                  <a href='https://2022.thef2e.com/news/week3' className='am_boardNews flex text-xl self-end cursor-pointer hover:text-[#844AE1]'>
+                    <img className='inline-block w-6 h-6 mr-2 opacity-0' src="./images/blackLoading.gif" alt="" />
+                    關卡資訊
+                  </a>
                 </div>
-                <p className='text-2xl text-end'>鈦坦科技</p>
+                <p className='am_boardCompany text-2xl text-end'>鈦坦科技</p>
               </div>
               <div className='am_board2 absolute bg-boardImg bg-[url("https://i.imgur.com/xlEO9za.png")] bg-[length:350px_240px] w-[350px] h-[240px] py-8 px-4 flex flex-col justify-between top-6 right-44'>
                 <div className='flex justify-between'>
-                  <p className='text-2xl'>WEEK2</p>
-                  <img className=' w-8 h-8' src="./images/week2icon.png" alt="" />
+                  <p className='am_boardWeek text-2xl'>WEEK2</p>
+                  <img className='am_boardIcon w-8 h-8' src="./images/week2icon.png" alt="" />
                 </div>
-                <h3 className='text-[28px]'>今晚，我想來點點簽</h3>
+                <h3 className='am_boardTitle break-normal overflow-y-hidden text-[28px]'>今晚，我想來點點簽</h3>
                 <div className='flex justify-between'>
-                  <h4 className='text-[28px]'>canavas</h4>
-                  <p className='text-xl self-end'>關卡資訊</p>
+                  <h4 className='am_boardLevel text-[28px]'>canavas</h4>
+                  <a href='https://2022.thef2e.com/news/week2' className='am_boardNews flex text-xl self-end cursor-pointer hover:text-[#844AE1]'>
+                    <img className='inline-block w-6 h-6 mr-2 opacity-0' src="./images/blackLoading.gif" alt="" />
+                    關卡資訊
+                  </a>
                 </div>
-                <p className='text-2xl text-end'>凱鈿行動科技</p>
+                <p className='am_boardCompany text-2xl text-end'>凱鈿行動科技</p>
               </div>
               <div className='am_board1 absolute bg-boardImg bg-[url("https://i.imgur.com/xlEO9za.png")] bg-[length:350px_240px] w-[350px] h-[240px] py-8 px-4 flex flex-col justify-between top-12 right-[232px]'>
                 <div className='flex justify-between'>
-                  <p className='text-2xl'>WEEK1</p>
-                  <img className=' w-8 h-8' src="./images/week1icon.png" alt="" />
+                  <p className='am_boardWeek text-2xl'>WEEK1</p>
+                  <img className='am_boardIcon w-8 h-8' src="./images/week1icon.png" alt="" />
                 </div>
-                <h3 className='text-[28px]'>THE F2E活動網站設計</h3>
+                <h3 className='am_boardTitle break-normal overflow-y-hidden text-[28px]'>THE F2E活動網站設計</h3>
                 <div className='flex justify-between'>
-                  <h4 className='text-[28px]'>視差滾動</h4>
-                  <p className='text-xl self-end'>關卡資訊</p>
+                  <h4 className='am_boardLevel text-[28px]'>視差滾動</h4>
+                  <a href='https://2022.thef2e.com/news/week1' className='am_boardNews flex text-xl self-end cursor-pointer hover:text-[#844AE1]'>
+                    <img className='inline-block w-6 h-6 mr-2 opacity-0' src="./images/blackLoading.gif" alt="" />
+                    關卡資訊
+                  </a>
                 </div>
-                <p className='text-2xl text-end'>板塊設計</p>
+                <p className='am_boardCompany text-2xl text-end'>板塊設計</p>
               </div>
               
             </div>

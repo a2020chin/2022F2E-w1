@@ -11,7 +11,7 @@ const PurposeSection = () => {
 
   const tl = useRef(null);
   const t2 = useRef(null);
-  const t3 = useRef(null);
+  const timelineScroll = useRef(null);
   const [amComplete, setAmComplete] = useState(false)
 
   const [muneHover, setMuneHover] = useState([1,1])
@@ -196,7 +196,7 @@ const PurposeSection = () => {
       },'>1')
       .to('.am_Ash,.am_Ash2',{
         bottom: '',
-        top: 0,
+        top: 16,
         width: 160,
         height: 160,
       })
@@ -205,6 +205,13 @@ const PurposeSection = () => {
       },'<')
       .to('.am_Ash2',{
         left: 184
+      },'<')
+      .fromTo(timelineScroll.current,{
+        display: 'none',
+        bottom: '-100%',
+      },{
+        display: 'block',
+        bottom: 0,
       },'<')
       
 
@@ -232,39 +239,13 @@ const PurposeSection = () => {
 
   return (
     <>
-      <section className={`am_ruleSection relative bg-primaryGray-200 flex flex-col justify-end overflow-hidden`}>
+      <section className={`am_ruleSection relative  flex flex-col justify-end overflow-hidden`}>
         
         <div className={`am_arriveSection absolute flex justify-between flex-col w-full h-full z-10 ${amComplete ? 'hidden' : 'block'}`}>
           <div className='w-full h-1/2 bg-black'></div>
           <div className='w-full h-1/2 bg-black'></div>
         </div>;
-        <nav className={`fixed top-0 w-full flex justify-between items-center text-primaryGray-600 p-6 `}>
-          <div className='flex'>
-            <h3 className='font-ArcadeClassic border-r-4 border-r-primaryGray-600 pr-4 mr-4'>
-              <a className='duration-200 hover:text-[#844AE1]' href="">THE F2E</a>
-            </h3>
-            <ul className='flex items-center gap-8'>
-              <li>
-                <a className='duration-200 hover:text-[#844AE1]' href="https://2022.thef2e.com/news">關卡資訊</a>
-              </li>
-              <li>
-                <a className='duration-200 hover:text-[#844AE1]' href="https://2022.thef2e.com/jobs">求職專區</a>
-              </li>
-              <li>
-                <a className='duration-200 hover:text-[#844AE1]' href="https://2022.thef2e.com/#qaTab">Q&A</a>
-              </li>
-            </ul>
-          </div>
-          <ul className='flex'>
-            <li>
-              <button className='inline-block bg-[url("https://i.imgur.com/UGb8d9S.png")] bg-cover w-40 h-[72px] duration-300 hover:drop-shadow-[4px_4px_20px_#FF5B5B] focus:bg-[url("https://i.imgur.com/ZueI99Y.png")] disabled:bg-[url("https://i.imgur.com/Bfg5Zxe.png")]' disabled></button>
-            </li>
-            <li>
-            <a className='inline-block bg-[url("https://i.imgur.com/KWznTqO.png")] bg-cover w-40 h-[72px] duration-300 hover:drop-shadow-[4px_4px_20px_#22C06F] focus:bg-[url("https://i.imgur.com/YuX8tzj.png")]' 
-            href="https://2022.thef2e.com/login"></a>
-            </li>
-          </ul>
-        </nav>
+        
         <div className='am_NextRule relative w-full h-[calc(75vh_-_132px)] flex flex-col justify-between px-14'>
             <div className={`am_gold absolute h-1/2 bottom-0 w-[200%] bg-goldImg bg-repeat-x z-[1] ${amComplete ? 'hidden' : 'block'}`}></div>
 
@@ -399,9 +380,9 @@ const PurposeSection = () => {
 
 
 
-
-        <Timeline/>
-
+      <div className='hidden relative' ref={timelineScroll}>
+        <Timeline />
+      </div>
 
 
       </section>

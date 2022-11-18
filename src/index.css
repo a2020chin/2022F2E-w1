@@ -7,7 +7,7 @@
     @apply font-Cubic box-border
   }
   section {
-    @apply w-full h-screen
+    @apply w-full h-screen bg-primaryGray-200
   }
   h1 {
     font-size: 80px;

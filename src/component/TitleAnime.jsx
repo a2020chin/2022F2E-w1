@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { gsap } from 'gsap'
 import { TextPlugin } from "gsap/TextPlugin";
 
-import PurposeSection from './PurposeSection'
+import HomePage from './HomePage'
 
 
 
@@ -199,7 +199,7 @@ function TitleAnime() {
 
   return (
     <>
-      {amNextSection ? <PurposeSection/> : nextSection }
+      {amNextSection ? <HomePage /> : nextSection }
     </>
   )
 }

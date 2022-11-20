@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState} from 'react'
 import { gsap, Expo } from 'gsap'
-import { TextPlugin } from "gsap/TextPlugin";
+
 
 import TitleAnime from './TitleAnime'
 
@@ -8,7 +8,6 @@ import TitleAnime from './TitleAnime'
 
 
 
-gsap.registerPlugin(TextPlugin);
 
 const Loading = () => {
 

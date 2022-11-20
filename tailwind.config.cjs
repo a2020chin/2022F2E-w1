@@ -28,7 +28,12 @@ module.exports = {
         textWhite: '#E3E3E3',
       },
       backgroundImage: {
-        
+        'gradient-toNextSection': "radial-gradient(circle , transparent 0%, transparent 99.99%, #000000 99.99%, #000000 100%)",
+        'goldImg': "url('https://i.imgur.com/o4FvKYP.png')",
+        'master1': "url('https://imgur.com/1YZ5PWN.jpg')",
+        'master2': "url('https://imgur.com/NVNpKdR.jpg')",
+        'master3': "url('https://imgur.com/gemWpS5.jpg')",
+        'master4': "url('https://imgur.com/lHawDVJ.jpg')",
       },
     },
   },

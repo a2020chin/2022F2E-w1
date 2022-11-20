@@ -1,13 +1,11 @@
 import { useEffect, useRef, useState } from 'react'
 import { gsap } from 'gsap'
-import { TextPlugin } from "gsap/TextPlugin";
+
 
 import HomePage from './HomePage'
 
 
 
-
-gsap.registerPlugin(TextPlugin);
 
 function TitleAnime() {
 
@@ -164,7 +162,6 @@ function TitleAnime() {
             className='inline-block text-[24px] text-textWhite'
             onMouseEnter={() => {
               setMuneHover(1)
-              toNextSection()
             }}
             href="https://www.hexschool.com/">六角學院</a>
         </li>

@@ -1,7 +1,9 @@
-import { useEffect, useRef, useState} from 'react'
+import { useEffect, useRef} from 'react'
 import { gsap } from 'gsap'
+import { TextPlugin } from "gsap/TextPlugin";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+gsap.registerPlugin(TextPlugin);
 gsap.registerPlugin(ScrollTrigger);
 
 const AwardSection = () => {
@@ -9,25 +11,57 @@ const AwardSection = () => {
   const t1 = useRef(null)
 
   useEffect(() => {
-    t1.current = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".am_awardSection",
-        // markers: true,
-        start: '-50% 0',
-        end: '0 100%',
-        // pin: true, 
-        scrub: 1,
-        // pinSpacer: true
-      },
-    })
+    
+    gsap.to(".am_awardGold", {
+      transform: 'translateX(-325px)', 
+      ease: "none",
+      duration: 1,
+      repeat: -1,
+    });
+
+    return () => {
+      t1.current = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".am_awardSection",
+          // markers: true,
+          start: '0 0',
+          end: '200%',
+          pin: true, 
+          scrub: 1,
+          pinSpacer: true
+        },
+      })
+      .to('.am_awardTitle',{
+        text: '區區修煉已經無法滿足了嗎？還有比賽等著你！',
+        duration: 0.6
+      })
+      .fromTo('.am_awardNotice',{
+        'transform-origin': '0 0',
+        transform: 'rotate(45deg)',
+        opacity: 0
+      },{
+        transform: 'rotate(0deg)',
+        opacity: 1
+      },'<')
+      .to('.am_awardTitle',{
+        opacity: 0,
+      })
+      .to('.am_awardNotice',{
+        transform: 'rotate(-45deg)',
+        opacity: 0,
+      },'<')
+      .to('.am_awardGold',{
+        opacity: 0,
+      },'<')
+    }
   },[])
 
   return (
     <>
-      <section className='am_awardSection flex flex-col justify-end'>
+      <section className='am_awardSection flex flex-col justify-end overflow-hidden'>
         <div className="px-20 mb-4">
-          <h3 className='text-center mb-4'>區區修煉已經無法滿足了嗎？還有比賽等著你！</h3>
-          <div className=" max-w-[1160px] mx-auto p-6 border-8 border-primaryGray-600 rounded-2xl shadow-[10px_10px_0_rgba(0,_0,_0,_0.25)]">
+          <h3 className='am_awardTitle text-center mb-4'></h3>
+          <div className="am_awardNotice max-w-[1160px] mx-auto p-6 border-8 border-primaryGray-600 rounded-2xl shadow-[10px_10px_0_rgba(0,_0,_0,_0.25)]">
             <div className='mb-10'>
               <h5 className='text-[#9E63FF] mb-6'>獎項</h5>
               <ul className='text-2xl'>
@@ -46,7 +80,10 @@ const AwardSection = () => {
             </div>
           </div>
         </div>
-        <img className='w-full h-72' src="./images/gold.png" alt="" />
+        <div className='am_awardGold w-[200%] flex'>
+        <img className='h-72' src="./images/gold.png" alt="" />
+        <img className='h-72 -translate-x-[60px]' src="./images/gold.png" alt="" />
+        </div>
       </section>
     </>
   )

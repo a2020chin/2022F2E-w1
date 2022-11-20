@@ -1,5 +1,3 @@
-import React from 'react'
-
 const NavComponent = () => {
   return (
     <nav className={`fixed top-0 w-full flex justify-between items-center text-primaryGray-600 p-6 z-20`}>
@@ -21,7 +19,7 @@ const NavComponent = () => {
       </div>
       <ul className='flex'>
         <li>
-          <button className='inline-block bg-[url("https://i.imgur.com/UGb8d9S.png")] bg-cover w-40 h-[72px] duration-300 hover:drop-shadow-[4px_4px_20px_#FF5B5B] focus:bg-[url("https://i.imgur.com/ZueI99Y.png")] disabled:bg-[url("https://i.imgur.com/Bfg5Zxe.png")]' disabled></button>
+          <button className='inline-block cursor-pointer bg-[url("https://i.imgur.com/UGb8d9S.png")] bg-cover w-40 h-[72px] duration-300 hover:drop-shadow-[4px_4px_20px_#FF5B5B] focus:bg-[url("https://i.imgur.com/ZueI99Y.png")] disabled:bg-[url("https://i.imgur.com/Bfg5Zxe.png")]' disabled></button>
         </li>
         <li>
         <a className='inline-block bg-[url("https://i.imgur.com/KWznTqO.png")] bg-cover w-40 h-[72px] duration-300 hover:drop-shadow-[4px_4px_20px_#22C06F] focus:bg-[url("https://i.imgur.com/YuX8tzj.png")]' 

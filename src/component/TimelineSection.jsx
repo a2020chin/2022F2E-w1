@@ -5,7 +5,7 @@ import { gsap } from 'gsap'
 const Timeline = () => {
   const [ mouseHover, setMouseHover] = useState(0)
   const timelineContent = [
-    `每個挑戰主題提供一週開發時間\n未在隔週一中午12:00前登陸作品者，當週即為挑戰失敗！`,
+    '每個挑戰主題提供一週開發時間\n未在隔週一中午12:00前登陸作品者，當週即為挑戰失敗！',
     '報名時間 10/13(四)早上 11:00 - 11/06(日)晚上 23:59\n截止前可修改報名組別',
     'UI組、團體組開賽10/31\n前端組開賽11/7',
     'UI組：10/31（一）~11/21（一）\n前端組：11/7（一）~11/28（一）\n團體組：11/7（一）~11/28（一）',
@@ -70,32 +70,32 @@ const Timeline = () => {
             setMouseHover(1)
           }}
           >
-            <img className={`mb-2 duration-300 ${mouseHover === 1 && 'scale-[2] mb-6'}`} src="./images/signIcon.svg" alt="" />
-            <p className={`text-base text-white duration-300 ${mouseHover === 1 && 'text-2xl'}`}>開放報名</p>
+            <img className={`duration-300 ${mouseHover === 1 ? 'scale-[2] mb-6' : 'mb-2'}`} src="./images/signIcon.svg" alt="" />
+            <p className={`text-white duration-300 ${mouseHover === 1 ? 'text-2xl' : 'text-base'}`}>開放報名</p>
           </div>
           <div className='absolute bottom-[34%] right-[62%] flex flex-col items-center cursor-pointer group'
           onMouseEnter={ () => {
             setMouseHover(2)
           }}
           >
-            <img className={`mb-2 duration-300 ${mouseHover === 2 && 'scale-[2] mb-6'}`} src="./images/startIcon.svg" alt="" />
-            <p className={`text-base text-white duration-300 ${mouseHover === 2 && 'text-2xl'}`}>各組別開賽</p>
+            <img className={`duration-300 ${mouseHover === 2 ? 'scale-[2] mb-6' : 'mb-2'}`} src="./images/startIcon.svg" alt="" />
+            <p className={`text-white duration-300 ${mouseHover === 2 ? 'text-2xl' : 'text-base'}`}>各組別開賽</p>
           </div>
           <div className='absolute bottom-[27%] right-[36.5%] flex flex-col items-center cursor-pointer group'
           onMouseEnter={ () => {
             setMouseHover(3)
           }}
           >
-            <img className={`mb-2 duration-300 ${mouseHover === 3 && 'scale-[2] mb-6'}`} src="./images/uploadIcon.svg" alt="" />
-            <p className={`text-base text-white duration-300 ${mouseHover === 3 && 'text-2xl'}`}>登陸作品</p>
+            <img className={`duration-300 ${mouseHover === 3 ? 'scale-[2] mb-6' : 'mb-2'}`} src="./images/uploadIcon.svg" alt="" />
+            <p className={`text-white duration-300 ${mouseHover === 3 ? 'text-2xl' : 'text-base'}`}>登陸作品</p>
           </div>
           <div className='absolute bottom-[45%] right-[15%] flex flex-col items-center cursor-pointer group'
           onMouseEnter={ () => {
             setMouseHover(4)
           }}
           >
-            <img className={`w-[168px] h-[140px] mb-2 duration-300 ${mouseHover === 4 && 'scale-125 mb-6'}`} src="./images/treasurecChest.png" alt="" />
-            <p className={`text-base text-white duration-300 ${mouseHover === 4 && 'text-2xl'}`}>頒獎</p>
+            <img className={`w-[168px] h-[140px] duration-300 ${mouseHover === 4 ? 'scale-125 mb-6' : 'mb-2'}`} src="./images/treasurecChest.png" alt="" />
+            <p className={`text-white duration-300 ${mouseHover === 4 ? 'text-2xl' : 'text-base'}`}>頒獎</p>
           </div>
         </div>
       </div>

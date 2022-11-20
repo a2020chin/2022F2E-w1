@@ -2,7 +2,8 @@ import { useEffect, useRef, useState} from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { TextPlugin } from "gsap/TextPlugin";
-import Timeline from './Timeline'
+import TimelineSection from './TimelineSection'
+import { useAnime } from './Context'
 
 gsap.registerPlugin(TextPlugin);
 gsap.registerPlugin(ScrollTrigger);
@@ -15,6 +16,8 @@ const PurposeSection = () => {
   const [amComplete, setAmComplete] = useState(false)
 
   const [muneHover, setMuneHover] = useState([1,1])
+
+  const { setAnimeComplete } = useAnime();
   
   useEffect(()=>{
 
@@ -23,6 +26,7 @@ const PurposeSection = () => {
         document.addEventListener("keyup", menuKey, false)
         amScroll()
         setAmComplete(true)
+        setAnimeComplete(true)
       }
     })
       .to('.am_arriveSection div',{
@@ -70,11 +74,11 @@ const PurposeSection = () => {
       })
       .to('.am_challenge',{
         text: '挑戰者',
-        duration: 0.6,
+        duration: 0.4,
       })
       .to('.am_challenge2',{
         text: '要做什麼呢？',
-        duration: 1.2,
+        duration: 0.8,
       })
 
     return ()=>{
@@ -91,7 +95,7 @@ const PurposeSection = () => {
         trigger: ".am_ruleSection",
         // markers: true,
         start: 'top 0',
-        end: 'bottom -500%',
+        end: '600%',
         pin: true, 
         scrub: 1,
         pinSpacer: true
@@ -156,7 +160,7 @@ const PurposeSection = () => {
       .to('.am_board2',{
         right: 40,
         padding: '92px 80px'
-      },'<','<')
+      },'<')
       .to('.am_board1',{
         right: 80,
         padding: '92px 80px'
@@ -176,6 +180,7 @@ const PurposeSection = () => {
         'font-size' : 32,
         padding: 8,
         background: 'white',
+        'align-self': 'center',
         'border': '2px solid #222222', 
       },'<')
       .to('.am_boardNews img',{
@@ -213,8 +218,9 @@ const PurposeSection = () => {
         display: 'block',
         bottom: 0,
       },'<')
-      
-
+      .to('.am_card2',{
+        opacity: 0
+      },'>2')
   }
 
 
@@ -381,7 +387,7 @@ const PurposeSection = () => {
 
 
       <div className='hidden relative' ref={timelineScroll}>
-        <Timeline />
+        <TimelineSection />
       </div>
 
 

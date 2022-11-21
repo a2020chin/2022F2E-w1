@@ -123,7 +123,7 @@ function TitleAnime() {
   const nextSection = <section className='relative bg-primaryGray-600 overflow-hidden'>
     <div className='am_loadtitle absolute w-full h-full bg-white z-[2] opacity-0'></div>
     <div className='am_toNextSection hidden absolute w-full h-full z-[2] bg-[#42403d] opacity-0'></div>
-    <div className='am_toNextSectionLogo hidden absolute w-full h-full z-[2]  justify-center items-center'>
+    <div className='am_toNextSectionLogo hidden absolute inset-0 w-full h-full z-[2]  justify-center items-center'>
       <img className='w-4/5 md:w-1/2 opacity-0 filter-hexSchool' src="./images/HexSchool.svg" alt="" />
     </div>
     <div className='am_toNextSectionB hidden absolute w-full h-full bg-gradient-toNextSection z-[3]'></div>

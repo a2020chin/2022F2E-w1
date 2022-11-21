@@ -1,12 +1,12 @@
 import { useState } from 'react'
 
-import NavComponent from './NavComponent'
-import AwardSection from './AwardSection'
-import PurposeSection from './PurposeSection'
-import LecturerScetion from './LecturerScetion'
-import SponsorSection from './SponsorSection'
+import NavComponent from '../component/NavComponent'
+import AwardSection from './section/AwardSection'
+import PurposeSection from './section/PurposeSection'
+import LecturerScetion from './section/LecturerScetion'
+import SponsorSection from './section/SponsorSection'
 
-import { AnimeContext } from "./Context";
+import { AnimeContext } from "../component/Context";
 
 
 const HomePage = () => {

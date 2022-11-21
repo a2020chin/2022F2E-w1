@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { gsap } from 'gsap'
 
 
-import HomePage from './HomePage'
+import HomePage from '../page/HomePage'
 
 
 
@@ -102,9 +102,16 @@ function TitleAnime() {
         display: 'flex'
       },'>.2')
       .to('.am_toNextSectionLogo img',{
-        duration: 0.8,
+        duration: 1.5,
         opacity: 1,
       })
+      .to("#feDis", {
+        duration: 1,
+        attr: {
+          'scale': '0'
+        }, 
+        ease: "none"
+      },'<')
       .to('.am_toNextSectionB',{
         duration: 0.8,
         display: 'block',
@@ -117,7 +124,7 @@ function TitleAnime() {
     <div className='am_loadtitle absolute w-full h-full bg-white z-[2] opacity-0'></div>
     <div className='am_toNextSection hidden absolute w-full h-full z-[2] bg-[#42403d] opacity-0'></div>
     <div className='am_toNextSectionLogo hidden absolute w-full h-full z-[2]  justify-center items-center'>
-      <img className='w-4/5 md:w-1/2 opacity-0' src="./images/HexSchool.png" alt="" />
+      <img className='w-4/5 md:w-1/2 opacity-0 filter-hexSchool' src="./images/HexSchool.svg" alt="" />
     </div>
     <div className='am_toNextSectionB hidden absolute w-full h-full bg-gradient-toNextSection z-[3]'></div>
 
@@ -189,6 +196,12 @@ function TitleAnime() {
         </li>
       </ul>
     </div>
+    <svg className='absolute w-0 h-0'>
+      <filter id="hexSchool" filterUnits="userSpaceOnUse" x="0" y="0">
+          <feTurbulence type="fractalNoise" baseFrequency="0.995" numOctaves="5" seed="1" result="img" />
+          <feDisplacementMap id="feDis" in="SourceGraphic" in2="img" xChannelSelector="R" yChannelSelector="G" scale="600" />
+      </filter>
+    </svg>
     {/* <img className='am_mouse absolute right-1/2 bottom-[5%] object-none inline-block' src="./images/arrow.svg" alt="" /> */}
   </section>;
 

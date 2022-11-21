@@ -41,6 +41,9 @@
     .filter-pixelate{
       filter: url(#pixelate);
     }
+    .filter-hexSchool{
+      filter: url(#hexSchool);
+    }
 }
 
 

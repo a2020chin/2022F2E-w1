@@ -26,8 +26,11 @@
 ## 個人投稿資訊：
 
 - 個人資訊：
+  email: sshane258@gmail.com
+  
 - 投稿位址：
 
 ## Demo：
+   https://a2020chin.github.io/2022F2E-w1/
 
 

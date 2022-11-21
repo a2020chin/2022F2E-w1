@@ -14,13 +14,13 @@ const HomePage = () => {
 
   return (
   	<>
-			<AnimeContext.Provider value={{ setAnimeComplete }}>
-  			<NavComponent />
-  			<PurposeSection/>
-				{animeComplete ? <AwardSection /> : ''}
-				{animeComplete ? <LecturerScetion /> : ''}
-				{animeComplete ? <SponsorSection /> : ''}
-			</AnimeContext.Provider>
+		  <AnimeContext.Provider value={{ animeComplete, setAnimeComplete }}>
+  	  	<NavComponent />
+  	  	<PurposeSection/>
+		    {animeComplete ? <AwardSection /> : ''}
+		    {animeComplete ? <LecturerScetion /> : ''}
+		    {animeComplete ? <SponsorSection /> : ''}
+		  </AnimeContext.Provider>
   	</>
   )
 }

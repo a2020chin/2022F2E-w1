@@ -14,67 +14,68 @@ const SponsorSection = () => {
   const tl = useRef(null);
 
   useEffect(() => {
-    
-    return () => {
-      let sponsor = gsap.utils.toArray('.am_sponsor img')
-      let sponsorName = gsap.utils.toArray('.am_sponsorName')
-      console.log(sponsorName)
-      tl.current = gsap.timeline({
-        scrollTrigger:{
-          trigger: '.am_sponsorSection',
-          toggleActions: "restart none none none",
-          start: 'top top',
-          // markers: true,
+    let sponsor = gsap.utils.toArray('.am_sponsor img')
+    let sponsorName = gsap.utils.toArray('.am_sponsorName')
+    tl.current = gsap.timeline({
+      scrollTrigger:{
+        trigger: '.am_sponsorSection',
+        toggleActions: "restart none none none",
+        start: '-20% top',
+        // markers: true,
+      }
+    })
+      .to('.am_sponsorTitle',{
+        opacity: 1,
+        duration: 1,
+      })
+      .to('.am_sponsor',{
+        opacity: 1,
+        stagger: {
+          each: 0.8
         }
       })
-        .to('.am_sponsorTitle',{
-          opacity: 1,
-          duration: 1,
-        })
-        .to('.am_sponsor',{
-          opacity: 1,
-          stagger: {
-            each: 0.8
-          }
-        })
-        .to(sponsorName[0],{
-          text: '凱鈿科技',
-          duration: 0.8
-        },'<')
-        .to(sponsorName[1],{
-          text: '鈦坦科技',
-          duration: 0.8,
-          delay: 0.8
-        },'<')
-        .to(sponsorName[2],{
-          text: '板塊設計',
-          duration: 0.8,
-          delay: 0.8
-        },'<')
-        .to(sponsor,{
-          duration:1,
-          transform: 'translate(-5px, -5px)',
-          stagger: {
-            each: 0.8
-          }
-        },'<')
-        .to(sponsor,{
-          filter:'drop-shadow(10px 10px 0 rgba(34,34,34,0.5))',
-          stagger: {
-            each: 0.8
-          }
-        },'<.5')
-        .to('.am_job',{
-          opacity: 1,
-          visibility: 'visible',
-        })
-    }
+      .to(sponsorName[0],{
+        text: '凱鈿科技',
+        duration: 0.8
+      },'<')
+      .to(sponsorName[1],{
+        text: '鈦坦科技',
+        duration: 0.8,
+        delay: 0.8
+      },'<')
+      .to(sponsorName[2],{
+        text: '板塊設計',
+        duration: 0.8,
+        delay: 0.8
+      },'<')
+      .to(sponsor,{
+        duration:1,
+        transform: 'translate(-5px, -5px)',
+        stagger: {
+          each: 0.8
+        }
+      },'<')
+      .to(sponsor,{
+        filter:'drop-shadow(10px 10px 0 rgba(34,34,34,0.5))',
+        stagger: {
+          each: 0.8
+        }
+      },'<.5')
+      .to('.am_job',{
+        opacity: 1,
+        visibility: 'visible',
+      })
+
+      return ()=>{
+        tl.current.kill()
+      }
   },[])
+
+
   
 
   return (
     <>
-      <section></section>
       <section className="am_sponsorSection flex justify-center items-end pb-40">
         <div>
           <h2 className="am_sponsorTitle text-center mb-14 opacity-0"><span className="text-[#9E63FF]">鑽石級</span>贊助商</h2>

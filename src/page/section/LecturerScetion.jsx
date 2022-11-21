@@ -31,43 +31,44 @@ const LecturerScetion = () => {
 
   useEffect(() => {
 
-    return () => {
-      t4.current = gsap.timeline({
-        scrollTrigger: {
-          trigger: ".am_lecturerSection",
-          // markers: true,
-          start: '0 0',
-          end: '300%',
-          pin: true, 
-          scrub: 1,
-          pinSpacer: true
-        },
-      })
-      .to('.am_master',{
-        opacity: 1
-      })
-      .to('.am_lecturerUi',{
-        opacity: 1
-      },'<.5')
-      .to('.am_master,.am_lecturerContent',{
-        opacity: 0,
-        display: 'none',
-      },'>1')
-      .fromTo('.am_personal,.am_group',{
-        opacity: 0
-      },{
-        display: 'flex',
-        opacity: 1
-      })
-      .to('.am_countdown',{
-        display: 'flex',
-        opacity: 1
-      },'<')
-      .to('.am_countdown div',{
-        opacity: 1
-      })
-      
+    t4.current = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".am_lecturerSection",
+        // markers: true,
+        start: '0 0',
+        end: '300%',
+        pin: true, 
+        scrub: 1,
+        pinSpacer: true
+      },
+    })
+    .to('.am_master',{
+      opacity: 1
+    })
+    .to('.am_lecturerUi',{
+      opacity: 1
+    },'<.5')
+    .to('.am_master,.am_lecturerContent',{
+      opacity: 0,
+      display: 'none',
+    },'>1')
+    .fromTo('.am_personal,.am_group',{
+      opacity: 0
+    },{
+      display: 'flex',
+      opacity: 1
+    })
+    .to('.am_countdown',{
+      display: 'flex',
+      opacity: 1
+    },'<')
+    .to('.am_countdown div',{
+      opacity: 1
+    })
 
+    
+    return ()=>{
+      t4.current.kill()
     }
   },[])
 

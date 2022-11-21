@@ -19,41 +19,44 @@ const AwardSection = () => {
       repeat: -1,
     });
 
-    return () => {
-      t3.current = gsap.timeline({
-        scrollTrigger: {
-          trigger: ".am_awardSection",
-          // markers: true,
-          start: '0 0',
-          end: '200%',
-          pin: true, 
-          scrub: 1,
-          pinSpacer: true
-        },
-      })
-      .to('.am_awardTitle',{
-        text: '區區修煉已經無法滿足了嗎？還有比賽等著你！',
-        duration: 0.6
-      })
-      .fromTo('.am_awardNotice',{
-        'transform-origin': '0 0',
-        transform: 'rotate(45deg)',
-        opacity: 0
-      },{
-        transform: 'rotate(0deg)',
-        opacity: 1
-      },'<')
-      .to('.am_awardTitle',{
-        opacity: 0,
-      })
-      .to('.am_awardNotice',{
-        transform: 'rotate(-45deg)',
-        opacity: 0,
-      },'<')
-      .to('.am_awardGold',{
-        opacity: 0,
-      },'<')
+    t3.current = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".am_awardSection",
+        // markers: true,
+        start: '0 0',
+        end: '200%',
+        pin: true, 
+        scrub: 1,
+        pinSpacer: true
+      },
+    })
+    .to('.am_awardTitle',{
+      text: '區區修煉已經無法滿足了嗎？還有比賽等著你！',
+      duration: 0.6
+    })
+    .fromTo('.am_awardNotice',{
+      'transform-origin': '0 0',
+      transform: 'rotate(45deg)',
+      opacity: 0
+    },{
+      transform: 'rotate(0deg)',
+      opacity: 1
+    },'<')
+    .to('.am_awardTitle',{
+      opacity: 0,
+    })
+    .to('.am_awardNotice',{
+      transform: 'rotate(-45deg)',
+      opacity: 0,
+    },'<')
+    .to('.am_awardGold',{
+      opacity: 0,
+    },'<')
+
+    return ()=>{
+      t3.current.kill()
     }
+    
   },[])
 
   return (

@@ -11,12 +11,12 @@ gsap.registerPlugin(ScrollTrigger);
 const SponsorSection = () => {
 
 
-  const tl = useRef(null);
+  const t5 = useRef(null);
 
   useEffect(() => {
     let sponsor = gsap.utils.toArray('.am_sponsor img')
     let sponsorName = gsap.utils.toArray('.am_sponsorName')
-    tl.current = gsap.timeline({
+    t5.current = gsap.timeline({
       scrollTrigger:{
         trigger: '.am_sponsorSection',
         toggleActions: "restart none none none",
@@ -67,7 +67,7 @@ const SponsorSection = () => {
       })
 
       return ()=>{
-        tl.current.kill()
+        t5.current.kill()
       }
   },[])
 

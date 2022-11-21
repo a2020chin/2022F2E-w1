@@ -8,7 +8,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const AwardSection = () => {
 
-  const t1 = useRef(null)
+  const t3 = useRef(null)
 
   useEffect(() => {
     
@@ -20,7 +20,7 @@ const AwardSection = () => {
     });
 
     return () => {
-      t1.current = gsap.timeline({
+      t3.current = gsap.timeline({
         scrollTrigger: {
           trigger: ".am_awardSection",
           // markers: true,

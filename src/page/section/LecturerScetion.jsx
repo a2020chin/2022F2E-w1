@@ -10,7 +10,7 @@ gsap.registerPlugin(ScrollTrigger);
 const LecturerScetion = () => {
 
   const [ mouseHover, setMouseHover] = useState(0)
-  const t1 = useRef(null)
+  const t4 = useRef(null)
 
   const lecturerContent = [
     '各界大神接力分享\n11/3~11/24 每週四線上直播\n免費公開場',
@@ -32,7 +32,7 @@ const LecturerScetion = () => {
   useEffect(() => {
 
     return () => {
-      t1.current = gsap.timeline({
+      t4.current = gsap.timeline({
         scrollTrigger: {
           trigger: ".am_lecturerSection",
           // markers: true,
